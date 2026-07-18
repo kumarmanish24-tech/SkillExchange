@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 abstract final class AppColors {
 
   static const Color button = Colors.blue;
+  static const Color theme = Colors.teal;
+  static const Color darkfont = Colors.black;
+  static const Color middark = Colors.black54;
+
+
 
 static const Color primary = Color(0xFF6200EE);
 static const Color secondary = Color(0xFF03DAC6);

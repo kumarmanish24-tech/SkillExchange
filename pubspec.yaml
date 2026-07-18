@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   lottie: ^3.5.1
   pretty_animated_buttons: ^0.0.2
+  easy_stepper: ^1.1.0
+  page_transition: ^2.2.2
 
 
 dev_dependencies:

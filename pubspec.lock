@@ -57,6 +57,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.9"
+  easy_stepper:
+    dependency: "direct main"
+    description:
+      name: easy_stepper
+      sha256: "3fae7f3ad9857cecfb97c72261e198884243c911e0339d68e7ad6b3994f75866"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   fake_async:
     dependency: transitive
     description:
@@ -179,6 +187,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.18.0"
+  page_transition:
+    dependency: "direct main"
+    description:
+      name: page_transition
+      sha256: "61dac670e80ebdd7da847c21841e1dfd8f9ab483b3a0c5fddc877ad8d23b69ee"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.2"
   path:
     dependency: transitive
     description:

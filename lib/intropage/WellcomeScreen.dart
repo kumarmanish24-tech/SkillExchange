@@ -5,6 +5,8 @@ import 'package:pretty_animated_buttons/pretty_animated_buttons.dart';
 import 'package:ex32/ex.dart';
 import 'package:ex32/colors/colors.dart';
 import 'CreateProfile.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:ex32/pagetra.dart';
 
 class WellcomeScreen extends StatefulWidget {
   const WellcomeScreen({Key? key}) : super(key: key);
@@ -29,7 +31,7 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
                 ),
                 Text(
                   'Skill Partner ',
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 35,color: AppColors.button),
+                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 35,color: AppColors.theme),
                 ),
                 SizedBox(height: 20),
                 Text(
@@ -64,7 +66,7 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
               labelStyle: const TextStyle(
                 fontWeight: FontWeight.w700,
               ),
-              bgColor: AppColors.button,
+              bgColor: AppColors.theme,
               onPressed:()async{
 
                 await Future.delayed(const Duration(milliseconds: 600));
@@ -72,9 +74,9 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
               },
             ),
 
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Createprofile()));
-            }, child: Text("go to ex page"))
+            // ElevatedButton(onPressed: (){
+            //   Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage()));
+            // }, child: Text("go to ex page"))
 
           ],
         ),
