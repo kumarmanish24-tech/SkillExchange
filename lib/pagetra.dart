@@ -1,77 +1,76 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_multi_select_dropdown/flutter_multi_select_dropdown.dart';
 
-class RadioExample extends StatefulWidget {
-  const RadioExample({super.key});
+class SimpleDropdownExample extends StatefulWidget {
+  const SimpleDropdownExample({super.key});
 
   @override
-  State<RadioExample> createState() => _RadioExampleState();
+  State<SimpleDropdownExample> createState() => _SimpleDropdownExampleState();
 }
 
-class _RadioExampleState extends State<RadioExample> {
-  String selected = "Male";
+class _SimpleDropdownExampleState extends State<SimpleDropdownExample> {
+  // Is list mein selected strings save honge
+  List<String> selectedItems = [];
+
+  // Dropdown items definition
+  final List<DropdownItem<String>> _items = [
+    DropdownItem(label: 'Apple', value: 'apple'),
+    DropdownItem(label: 'Banana', value: 'banana'),
+    DropdownItem(label: 'Orange', value: 'orange'),
+    DropdownItem(label: 'Mango', value: 'mango'),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Radio Button")),
+      appBar: AppBar(title: const Text('Simple Multi-Select')),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            radioTile("Male"),
-            const SizedBox(height: 12),
-            radioTile("Female"),
-            const SizedBox(height: 12),
-            radioTile("Other"),
-          ],
-        ),
-      ),
-    );
-  }
+            const Text(
+              'Select Fruits:',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
 
-  Widget radioTile(String value) {
-    bool isSelected = selected == value;
-
-    return InkWell(
-      borderRadius: BorderRadius.circular(16),
-      onTap: () {
-        setState(() {
-          selected = value;
-        });
-      },
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        padding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 14,
-        ),
-        decoration: BoxDecoration(
-          color: isSelected
-              ? Colors.blue.withOpacity(0.1)
-              : Colors.white,
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(
-            color: isSelected ? Colors.blue : Colors.grey.shade300,
-            width: 2,
-          ),
-        ),
-        child: Row(
-          children: [
-            Radio<String>(
-              value: value,
-              groupValue: selected,
-              onChanged: (value) {
+            // Core Dropdown Widget
+            MultiDropdown<String>(
+              items: _items,
+              searchEnabled: true,
+              chipDecoration: const ChipDecoration(
+                backgroundColor: Colors.blueAccent,
+                labelStyle: TextStyle(color: Colors.white),
+              ),
+              fieldDecoration: FieldDecoration(
+                hintText: 'Choose your favorite fruits',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              // Naye version mein direct values ki list milti hai (bina DropdownItem ke)
+              onSelectionChange: (selectedValues) {
                 setState(() {
-                  selected = value!;
+                  if (selectedValues != null) {
+                    selectedItems = List<String>.from(selectedValues);
+                  } else {
+                    selectedItems = [];
+                  }
                 });
               },
             ),
+
+            const SizedBox(height: 24),
+            const Text(
+              'Currently Selected Raw Values:',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 4),
+
             Text(
-              value,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+              selectedItems.isEmpty ? "None" : selectedItems.toString(),
+              style: const TextStyle(fontSize: 16, color: Colors.indigo, fontWeight: FontWeight.w500),
             ),
           ],
         ),

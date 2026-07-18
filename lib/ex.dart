@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ex32/colors/colors.dart';
 import 'customeWidgets/custom_radio_card.dart';
+import 'pagetra.dart';
+import 'package:lottie/lottie.dart';
+import 'package:flutter_multi_select_dropdown/flutter_multi_select_dropdown.dart';
+
 
 class MyHorizontalStepper extends StatefulWidget {
   const MyHorizontalStepper({super.key});
@@ -13,6 +17,25 @@ class _MyHorizontalStepperState extends State<MyHorizontalStepper> {
   final PageController _pageController = PageController();
   int _currentStep = 0;
   final int _totalSteps = 5;
+
+
+  List<String> selectedItemsTeach = [];
+  List<String> selectedItemsLearn = [];
+
+
+
+
+  // Dropdown items definition
+  final List<DropdownItem<String>> _items = [
+    DropdownItem(label: 'Flutter', value: 'flutter'),
+    DropdownItem(label: 'Dart', value: 'dart'),
+    DropdownItem(label: 'Firebase', value: 'firebase'),
+    DropdownItem(label: 'UI/UX Design', value: 'UI/UX design'),
+    DropdownItem(label: 'Git', value: 'git'),
+  ];
+
+
+
 
   // 1. Defined titles for each step
   final List<String> _stepTitles = [
@@ -543,7 +566,7 @@ class _MyHorizontalStepperState extends State<MyHorizontalStepper> {
               ),
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(left: 8.0,right: 8.0),
                   child: Column(
                     children: [
                       SizedBox(height: 10),
@@ -565,6 +588,12 @@ class _MyHorizontalStepperState extends State<MyHorizontalStepper> {
                       ),
 
                       SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Text("How do you want to use SkillExchange?",style: TextStyle(fontSize: 15,color: AppColors.darkfont,fontWeight: FontWeight.w500),)
+
+                        ],
+                      ),
                       Column(
                         children: [
                           const CustomRadioCard(
@@ -587,12 +616,609 @@ class _MyHorizontalStepperState extends State<MyHorizontalStepper> {
                           ),
                         ],
                       ),
+                      SizedBox(height: 10),
+                      Row(
+                        children: [
+                          Text("What are your interests?(Optional)",style: TextStyle(fontSize: 15,color: AppColors.darkfont,fontWeight: FontWeight.w500),)
+                          
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      SizedBox(
+                        height: 200,
+                        width: 350,
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  height: 40,
+                                  width: 110,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(
+                                        color:  Colors.teal ,
+                                        width: 1,
+                                      ),
+                                      color:
+                                      Colors.greenAccent.withOpacity(0.1)
+
+                                  ),
+                                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      SizedBox(width: 5,),
+                                      Icon(Icons.code_off_outlined,size: 20,),
+                                      Text("Programming",style: TextStyle(fontSize: 12),),
+                                      SizedBox(width: 5,)
+                                    ],
+                                  ),
+
+                                ),
+                                SizedBox(width: 10,),
+                                Container(
+                                  height: 40,
+                                  width: 90,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(
+                                        color:  Colors.teal ,
+                                        width: 1,
+                                      ),
+                                      color:
+                                      Colors.greenAccent.withOpacity(0.1)
+
+                                  ),
+                                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      SizedBox(width: 5,),
+                                      Icon(Icons.color_lens_outlined,size: 20,),
+                                      Text("Design",style: TextStyle(fontSize: 12),),
+                                      SizedBox(width: 5,)
+                                    ],
+                                  ),
+
+                                ),
+                                SizedBox(width: 10,),
+                                Container(
+                                  height: 40,
+                                  width:90,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(
+                                        color:  Colors.teal ,
+                                        width: 1,
+                                      ),
+                                      color:
+                                      Colors.greenAccent.withOpacity(0.1)
+
+                                  ),
+                                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      SizedBox(width: 5,),
+                                      Icon(Icons.smart_toy_outlined,size: 20,),
+                                      Text("AI/ ML",style: TextStyle(fontSize: 12),),
+                                      SizedBox(width: 5,)
+                                    ],
+                                  ),
+
+                                ),
+
+
+
+
+
+                              ],
+                            ),
+                            SizedBox(height: 10,),
+                            Row(
+                              children: [
+                                Container(
+                                  height: 40,
+                                  width: 100,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(
+                                        color:  Colors.teal ,
+                                        width: 1,
+                                      ),
+                                      color:
+                                      Colors.greenAccent.withOpacity(0.1)
+
+                                  ),
+                                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      SizedBox(width: 5,),
+                                      Icon(Icons.work_outline,size: 20,),
+                                      Text("Business",style: TextStyle(fontSize: 12),),
+                                      SizedBox(width: 5,)
+                                    ],
+                                  ),
+
+                                ),
+                                SizedBox(width: 10,),
+                                Container(
+                                  height: 40,
+                                  width: 100,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(
+                                        color:  Colors.teal ,
+                                        width: 1,
+                                      ),
+                                      color:
+                                      Colors.greenAccent.withOpacity(0.1)
+
+                                  ),
+                                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      SizedBox(width: 5,),
+                                      Icon(Icons.campaign,size: 20,),
+                                      Text("Marketing",style: TextStyle(fontSize: 12),),
+                                      SizedBox(width: 5,)
+                                    ],
+                                  ),
+
+                                ),
+                                SizedBox(width: 10,),
+                                Container(
+                                  height: 40,
+                                  width:110,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(
+                                        color:  Colors.teal ,
+                                        width: 1,
+                                      ),
+                                      color:
+                                      Colors.greenAccent.withOpacity(0.1)
+
+                                  ),
+                                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      SizedBox(width: 5,),
+                                      Icon(Icons.camera_alt_outlined,size: 20,),
+                                      Text("Photography",style: TextStyle(fontSize: 12),),
+                                      SizedBox(width: 5,)
+                                    ],
+                                  ),
+
+                                ),
+
+
+
+
+
+                              ],
+                            ),
+                            SizedBox(height: 10,),
+                            Row(
+                              children: [
+                                Container(
+                                  height: 40,
+                                  width: 90,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(
+                                        color:  Colors.teal ,
+                                        width: 1,
+                                      ),
+                                      color:
+                                      Colors.greenAccent.withOpacity(0.1)
+
+                                  ),
+                                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      SizedBox(width: 5,),
+                                      Icon(Icons.music_note_outlined,size: 20,),
+                                      Text("Music",style: TextStyle(fontSize: 12),),
+                                      SizedBox(width: 5,)
+                                    ],
+                                  ),
+
+                                ),
+                                SizedBox(width: 10,),
+                                Container(
+                                  height: 40,
+                                  width: 90,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      border: Border.all(
+                                        color:  Colors.teal ,
+                                        width: 1,
+                                      ),
+                                      color:
+                                      Colors.greenAccent.withOpacity(0.1)
+
+                                  ),
+                                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: [
+                                      SizedBox(width: 5,),
+                                      Icon(Icons.more_horiz_outlined,size: 20,),
+                                      Text("Other",style: TextStyle(fontSize: 12),),
+                                      SizedBox(width: 5,)
+                                    ],
+                                  ),
+
+                                ),
+
+
+
+
+
+
+                              ],
+                            ),
+                          ],
+                        ),
+                      )
+
                     ],
                   ),
                 ),
               ),
-              Center(child: Text('Step 4: Country, city and address layout')),
-              Center(child: Text('Step 5: Confirmation agreement display')),
+              Center(child: Padding(
+                padding: const EdgeInsets.only(left: 8.0,right: 8.0),
+                child: Column(
+                  children: [
+                    SizedBox(height: 10),
+                    Text(
+                      'Your Skills',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 30,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Add the skills you can teach and",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
+                        color: Colors.black54,
+                      ),
+                    ),
+                    Text(
+                      "those you want to learn.",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
+                        color: Colors.black54,
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Skills I can teach',
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          const Text(
+                            'Add the skills you are good at and ',
+                            style: TextStyle(fontSize: 15,color: AppColors.middark),
+                          ),
+                          const Text(
+                            'can teach others.',
+                            style: TextStyle(fontSize: 15,color: AppColors.middark),
+                          ),
+                          const SizedBox(height: 8),
+
+                          // Core Dropdown Widget
+                          MultiDropdown<String>(
+                            items: _items,
+                            searchEnabled: true,
+                            chipDecoration:  ChipDecoration(
+                              backgroundColor: Colors.tealAccent.withValues(alpha: 0.2),
+                              labelStyle: TextStyle(color: Colors.teal,fontWeight: FontWeight.w500),
+                            ),
+                            fieldDecoration: FieldDecoration(
+                              hintText: 'Please select Skills here',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
+                            // Naye version mein direct values ki list milti hai (bina DropdownItem ke)
+                            onSelectionChange: (selectedValues) {
+                              setState(() {
+                                if (selectedValues != null) {
+                                  selectedItemsTeach = List<String>.from(selectedValues);
+                                } else {
+                                  selectedItemsTeach = [];
+                                }
+                              });
+                            },
+                          ),
+
+                          // const SizedBox(height: 24),
+                          // const Text(
+                          //   'Currently Selected Raw Values:',
+                          //   style: TextStyle(fontWeight: FontWeight.bold),
+                          // ),
+                          // const SizedBox(height: 4),
+                          //
+                          // Text(
+                          //   selectedItems.isEmpty ? "None" : selectedItems.toString(),
+                          //   style: const TextStyle(fontSize: 16, color: Colors.indigo, fontWeight: FontWeight.w500),
+                          // ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Skills Ican learn',
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          const Text(
+                            'Add the skills you want to learn ',
+                            style: TextStyle(fontSize: 15,color: AppColors.middark),
+                          ),
+                          const Text(
+                            'and grow in.',
+                            style: TextStyle(fontSize: 15,color: AppColors.middark),
+                          ),
+                          const SizedBox(height: 8),
+
+                          // Core Dropdown Widget
+                          MultiDropdown<String>(
+                            items: _items,
+                            searchEnabled: true,
+                            chipDecoration:  ChipDecoration(
+                              backgroundColor: Colors.tealAccent.withValues(alpha: 0.2),
+                              labelStyle: TextStyle(color: Colors.teal,fontWeight: FontWeight.w500),
+                            ),
+                            fieldDecoration: FieldDecoration(
+                              hintText: 'Please select Skills here',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
+                            // Naye version mein direct values ki list milti hai (bina DropdownItem ke)
+                            onSelectionChange: (selectedValues) {
+                              setState(() {
+                                if (selectedValues != null) {
+                                  selectedItemsLearn = List<String>.from(selectedValues);
+                                } else {
+                                  selectedItemsLearn = [];
+                                }
+                              });
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+
+
+
+
+
+
+                  ],
+                ),
+              ),),
+              Center(child: Padding(
+                padding: const EdgeInsets.only(left: 8.0,right: 8.0),
+                child: Column(
+                  children: [
+                    SizedBox(height: 10),
+                    Text(
+                      'Profile Completes!',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 30,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "You're all set to start you learning",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
+                        color: Colors.black54,
+                      ),
+                    ),
+                    Text(
+                      "and teaching journey.",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
+                        color: Colors.black54,
+                      ),
+                    ),
+
+                    // SizedBox(
+                    //   height: 250,
+                    //     width: 350,
+                    //     child: Lottie.asset("assets/lottie/Thumbs up birdie.json")),
+                    SizedBox(height: 30),
+
+                    Container(
+                      height: 450,
+                      width: 350,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(
+                            color:  Colors.teal ,
+                            width: 1,
+                          ),
+                          color:
+                          Colors.greenAccent.withOpacity(0.05)
+
+                      ),
+
+                      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [SizedBox(height: 10,),
+                          Row(
+                            children: [
+                              SizedBox(width: 20,),
+                              Text("Profile Summary",style: TextStyle(color: AppColors.darkfont,fontWeight: FontWeight.w600,fontSize: 15),),
+                            ],
+                          ),
+                          SizedBox(height: 10,),
+                          Row(
+                            children: [
+                              SizedBox(width: 10,),
+                              CircleAvatar(
+                                radius: 50,
+                                backgroundColor: Colors.teal,
+                                child: CircleAvatar(
+                                  radius: 49,
+                                  backgroundColor:Colors.white ,
+                                ),
+                              ),
+                              SizedBox(width: 20,),
+                              Column(crossAxisAlignment: CrossAxisAlignment.start,
+
+                                children: [
+                                  Text("Manish Kumar",style: TextStyle(color: AppColors.darkfont,fontWeight: FontWeight.w600,fontSize: 18),),
+                                  SizedBox(height: 10,),
+                                  Text("@manish_dev",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.w400,fontSize: 15),),
+                                  SizedBox(height: 1,),
+                                  Row(
+                                    children: [
+                                      Icon(Icons.location_on_outlined,size: 15,),
+                                      Text("Varanasi,india",style: TextStyle(color: AppColors.middark,fontWeight: FontWeight.w400,fontSize: 15),),
+                                    ],
+                                  ),
+
+
+                                ],
+                              )
+                            ],
+                          ),
+                          SizedBox(height: 10,),
+                          Divider(),
+                          ListTile(
+                            leading: Container(
+                              padding: const EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                color: Colors.tealAccent.withOpacity(0.1),
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Icon(
+                                Icons.book_outlined,
+                                color: Colors.teal,
+                              ),
+                            ),
+                            // Read Income Amount
+                            title: Text(
+                              'I love to learn',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 15,
+                                color: Colors.black,
+                              ),
+                            ),
+                            // Read Notes and Date
+
+
+                            // Delete Button (Optional)
+                          ),
+                          Divider(),
+                          ListTile(
+                            leading: Container(
+                              padding: const EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                color: Colors.tealAccent.withOpacity(0.1),
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Icon(
+                                Icons.more_horiz,
+                                color: Colors.teal,
+                              ),
+                            ),
+                            // Read Income Amount
+                            title: Text(
+                              'Can teach',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 15,
+                                color: Colors.black,
+                              ),
+                            ),
+                            trailing: Text("5 Skills →"),
+                            // Read Notes and Date
+
+
+                            // Delete Button (Optional)
+                          ),
+                          Divider(),
+                          ListTile(
+                            leading: Container(
+                              padding: const EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                color: Colors.tealAccent.withOpacity(0.1),
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Icon(
+                                Icons.more_horiz,
+                                color: Colors.teal,
+                              ),
+                            ),
+                            // Read Income Amount
+                            title: Text(
+                              'Wants to learn',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 15,
+                                color: Colors.black,
+                              ),
+                            ),
+                            trailing: Text("5 Skills →"),
+                            // Read Notes and Date
+
+
+                            // Delete Button (Optional)
+                          ),
+                          Divider(),
+                          ListTile(
+                            leading: Container(
+                              padding: const EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                color: Colors.tealAccent.withOpacity(0.1),
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Icon(
+                                Icons.work_outline,
+                                color: Colors.teal,
+                              ),
+                            ),
+                            // Read Income Amount
+                            title: Text(
+                              'Profession',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 15,
+                                color: Colors.black,
+                              ),
+                            ),
+                            trailing: Text("Student/Developer"),
+                            // Read Notes and Date
+
+
+                            // Delete Button (Optional)
+                          ),
+                        ],
+                      ),
+
+                    )
+
+
+
+
+
+
+
+
+                  ],
+                ),
+              ),),
             ],
           ),
         ),

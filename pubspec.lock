@@ -102,6 +102,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.0"
+  flutter_multi_select_dropdown:
+    dependency: "direct main"
+    description:
+      name: flutter_multi_select_dropdown
+      sha256: c8ad35e3f6b491d32238f2ab400e543c5d9f19903c34b468134789631df6b479
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter

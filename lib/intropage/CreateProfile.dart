@@ -17,7 +17,7 @@ class _CreateprofileState extends State<Createprofile> {
             children: [
         
               SizedBox(
-                height: 800,
+                height: 810,
                 width: 360,
                 child: MyHorizontalStepper(),
               )
