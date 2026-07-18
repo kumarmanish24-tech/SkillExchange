@@ -36,8 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   lottie: ^3.5.1
   pretty_animated_buttons: ^0.0.2
-  image_picker: ^1.2.3
-  file_picker: ^11.0.2
+
 
 dev_dependencies:
   flutter_test:

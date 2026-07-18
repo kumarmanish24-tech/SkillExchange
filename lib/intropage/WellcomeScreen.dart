@@ -29,7 +29,7 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
                 ),
                 Text(
                   'Skill Partner ',
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 35),
+                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 35,color: AppColors.button),
                 ),
                 SizedBox(height: 20),
                 Text(
@@ -73,7 +73,7 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
             ),
 
             ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => GalleryPickerExample()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Createprofile()));
             }, child: Text("go to ex page"))
 
           ],
