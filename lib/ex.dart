@@ -4,6 +4,7 @@ import 'customeWidgets/custom_radio_card.dart';
 import 'pagetra.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_multi_select_dropdown/flutter_multi_select_dropdown.dart';
+import 'navigation_pages/master.dart';
 
 
 class MyHorizontalStepper extends StatefulWidget {
@@ -1241,8 +1242,24 @@ class _MyHorizontalStepperState extends State<MyHorizontalStepper> {
                 child: const Text('BACK'),
               ),
               ElevatedButton(
-                onPressed: _nextStep,
-                style: ElevatedButton.styleFrom(
+                onPressed: (){
+
+                  if(_currentStep == _totalSteps-1){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BottomNavPage(),
+                      ),
+                    );
+                  }
+                  else{
+
+                    _nextStep();
+
+                  }
+                } ,
+
+                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.teal,
                   foregroundColor: Colors.white,
                   elevation: 0,
