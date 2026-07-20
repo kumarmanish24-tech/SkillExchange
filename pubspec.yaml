@@ -42,6 +42,7 @@ dependencies:
   flutter_multi_select_dropdown: ^1.0.0
   persistent_bottom_nav_bar_v2: ^6.3.2
   flutter_floating_bottom_bar: ^2.0.2
+  dynamic_tabbar: ^1.0.9
 
 
 dev_dependencies:

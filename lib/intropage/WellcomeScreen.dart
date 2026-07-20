@@ -8,6 +8,7 @@ import 'CreateProfile.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ex32/pagetra.dart';
 import 'package:ex32/navigation_pages/master.dart';
+import 'package:ex32/navigation_pages/widgets/custom_tab_bar.dart';
 class WellcomeScreen extends StatefulWidget {
   const WellcomeScreen({Key? key}) : super(key: key);
 
@@ -74,9 +75,9 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
               },
             ),
 
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavPage()));
-            }, child: Text("go to ex page"))
+            // ElevatedButton(onPressed: (){
+            //   Navigator.push(context, MaterialPageRoute(builder: (context) => DynamicTabExample()));
+            // }, child: Text("go to ex page"))
 
           ],
         ),
