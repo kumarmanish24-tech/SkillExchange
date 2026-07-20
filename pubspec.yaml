@@ -43,6 +43,7 @@ dependencies:
   persistent_bottom_nav_bar_v2: ^6.3.2
   flutter_floating_bottom_bar: ^2.0.2
   dynamic_tabbar: ^1.0.9
+  carousel_slider: ^5.1.2
 
 
 dev_dependencies:

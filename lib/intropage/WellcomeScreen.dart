@@ -75,9 +75,9 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
               },
             ),
 
-            // ElevatedButton(onPressed: (){
-            //   Navigator.push(context, MaterialPageRoute(builder: (context) => DynamicTabExample()));
-            // }, child: Text("go to ex page"))
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => asas()));
+            }, child: Text("go to ex page"))
 
           ],
         ),
