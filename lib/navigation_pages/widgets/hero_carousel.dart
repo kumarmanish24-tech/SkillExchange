@@ -23,13 +23,13 @@ class _HeroCarouselState extends State<HeroCarousel> {
       "title": "Learn New Skills",
       "subtitle": "Connect with talented people around the world.",
       "image":
-          "https://img.magnific.com/free-psd/education-flyer-template_47987-30876.jpg?semt=ais_hybrid&w=740&q=80",
+          "https://img.magnific.com/free-psd/education-flyer-template_47987-30887.jpg?semt=ais_hybrid&w=740&q=80",
     },
     {
       "title": "Teach & Earn",
       "subtitle": "Share your knowledge and build your network.",
       "image":
-          "https://img.magnific.com/free-psd/education-flyer-template_47987-30876.jpg?semt=ais_hybrid&w=740&q=80",
+          "https://img.magnific.com/premium-psd/education-school-admission-flyer-template_47987-30914.jpg?semt=ais_hybrid&w=740&q=80",
     },
   ];
 

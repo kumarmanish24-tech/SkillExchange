@@ -20,17 +20,22 @@ class _ProfileState extends State<Profile> {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 30),
+            SizedBox(height: 40),
             Container(
-              height: 130,
-              width: 350,
-              // color: Colors.blueAccent,
+              height: 140,
+              width: 345,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                gradient: LinearGradient(
+                  colors: [Colors.blue.shade50, Colors.purple.shade50],
+                ),
+              ),
               child: Row(
                 children: [
                   SizedBox(width: 10),
                   Column(
                     children: [
-                      SizedBox(height: 20),
+                      SizedBox(height: 10),
                       CircleAvatar(radius: 55,
                         backgroundColor: Colors.teal,
                         child: CircleAvatar(
@@ -47,7 +52,7 @@ class _ProfileState extends State<Profile> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 20),
+                      SizedBox(height: 10),
                       Text(
                         "Manish kumar",
                         style: TextStyle(
@@ -88,7 +93,7 @@ class _ProfileState extends State<Profile> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

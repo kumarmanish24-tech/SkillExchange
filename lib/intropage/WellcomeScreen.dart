@@ -23,7 +23,7 @@ class _WellcomeScreenState extends State<WellcomeScreen> {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 100),
+            SizedBox(height: 80),
             Column(
               children: [
                 Text(
