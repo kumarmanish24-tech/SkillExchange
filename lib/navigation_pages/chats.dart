@@ -24,7 +24,12 @@ class _ChatsState extends State<Chats> {
       body: Center(
         child: Column(
           children: [
-            Text("chats")
+            Text("chats"),
+            Container(
+              height: 100,
+              width: 200,
+              color: Colors.red,
+            )
           ],
         ),
       ),

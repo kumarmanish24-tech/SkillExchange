@@ -53,9 +53,27 @@ class _HomeState extends State<Home> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0),
-                  child: Text(
-                    "Upcoming Session",
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 15,
+                        width: 5,
+
+                        decoration: BoxDecoration(
+                          color: Colors.teal,
+                          borderRadius: const BorderRadius.only(
+
+                            topRight: Radius.circular(20),
+                            bottomRight: Radius.circular(20)
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 5,),
+                      Text(
+                        "Upcoming Session",
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
