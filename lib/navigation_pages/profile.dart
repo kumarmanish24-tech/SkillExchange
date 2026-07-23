@@ -26,6 +26,10 @@ class _ProfileState extends State<Profile> {
               width: 345,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: Colors.teal, // Border color
+                  width: 1.0,          // Border thickness
+                ),
                 gradient: LinearGradient(
                   colors: [Colors.blue.shade50, Colors.purple.shade50],
                 ),

@@ -36,10 +36,15 @@ class User_Card_explore extends StatelessWidget {
             height: 250,
 
             decoration: BoxDecoration(
+
               color: Colors.blue.withOpacity(0.06),
               // gradient: LinearGradient(
               //   colors: [Colors.blue.shade50, Colors.purple.shade50],
               // ),
+              border: Border.all(
+                color: Colors.blue.withOpacity(0.2), // Border color
+                width: 1.0,         // Border thickness
+              ),
 
 
 
